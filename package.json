@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
-    "dev": "DEBUG=TS-PROJECT:* ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/application/server.ts",
+    "dev": "DEBUG=TS-PROJECT:* ts-node-dev --respawn --transpile-only src/application/server.ts",
     "test:unit": "cross-env NODE_ENV=test jest test/unit --coverage",
     "test:functional": " node -r dotenv/config node_modules/.bin/jest test/functional --coverage --detectOpenHandles --forceExit --runInBand",
     "lint:fix": "npx eslint . --ext .ts --fix",

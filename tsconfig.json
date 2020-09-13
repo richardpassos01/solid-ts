@@ -14,7 +14,7 @@
     ],
     "allowJs": true,
     "checkJs": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "outDir": "./build",
     "noEmit": false,
     "resolveJsonModule": true,
