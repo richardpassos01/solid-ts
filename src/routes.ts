@@ -5,6 +5,4 @@ const router = Router();
 
 router.post('/users', (Request, Response) => createUserController.handle(Request, Response));
 
-export default {
-  router,
-};
+export default router;
