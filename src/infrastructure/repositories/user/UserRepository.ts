@@ -1,6 +1,6 @@
 import IGenericDatabase from '../IGenericDatabase';
-import { IUserRepository } from '../../../business/use-cases/user/IUserRepository';
-import User from '../../../business/use-cases/user/entities/User';
+import { IUserRepository } from '../../../business/User/use-cases/IUserRepository';
+import User from '../../../business/User/User';
 
 export default class UserRepository implements IUserRepository {
   constructor(

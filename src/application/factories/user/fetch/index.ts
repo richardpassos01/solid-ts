@@ -1,5 +1,5 @@
 import UserRepository from '../../../../infrastructure/repositories/user/UserRepository';
-import FetchUserUserCase from '../../../../business/use-cases/user/fetch/FetchUserUseCase';
+import FetchUserUserCase from '../../../../business/User/use-cases/fetch/FetchUserUseCase';
 import FetchUserController from '../../../controllers/user/fetch/FetchUserController';
 
 import { database } from '../../../../../config';

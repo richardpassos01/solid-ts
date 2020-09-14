@@ -1,5 +1,5 @@
 import { GenericCreatable, GenericFetchableByEmail, GenericFetchable } from '../../shared/Contracts';
-import User from './entities/User';
+import User from '../User';
 
 type Creatable = GenericCreatable<User>;
 

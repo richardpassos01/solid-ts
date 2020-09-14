@@ -1,6 +1,6 @@
 import { IUserRepository } from '../IUserRepository';
 import { IFetchUserDTORequestDTO } from './IFetchUserDTO';
-import User from '../entities/User';
+import User from '../../User';
 
 export default class FetchUserUserCase {
   constructor(
