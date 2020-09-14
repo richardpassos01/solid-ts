@@ -3,8 +3,14 @@ import MailTrapMailProvider from '../../../../infrastructure/providers/mailtrap/
 import CreateUserUserCase from '../../../../business/use-cases/user/create/CreateUserUseCase';
 import CreateUserController from '../../../controllers/user/create/CreateUserController';
 
+import { database } from '../../../../../config';
+
+import { connection } from '../../../../../database/relational';
+
+const queryBuilder = connection();
+
 const mailTrapMailProvider = new MailTrapMailProvider();
-const userRepository = new UserRepository();
+const userRepository = new UserRepository(queryBuilder, database.relational.tables.partners);
 
 const createUserUseCase = new CreateUserUserCase(
   userRepository,
