@@ -1,13 +1,13 @@
-import PostgresUserRepository from '../../../../infrastructure/repositories/implementations/PostgresUserRepository';
-import MailTrapMailProvider from '../../../../infrastructure/providers/implementation/MailTrapMailProvider';
+import UserRepository from '../../../../infrastructure/repositories/user/UserRepository';
+import MailTrapMailProvider from '../../../../infrastructure/providers/mailtrap/MailTrapMailProvider';
 import CreateUserUserCase from '../../../../business/use-cases/user/create/CreateUserUseCase';
 import CreateUserController from '../../../controllers/user/create/CreateUserController';
 
 const mailTrapMailProvider = new MailTrapMailProvider();
-const postgresUserRepository = new PostgresUserRepository();
+const userRepository = new UserRepository();
 
 const createUserUseCase = new CreateUserUserCase(
-  postgresUserRepository,
+  userRepository,
   mailTrapMailProvider,
 );
 
