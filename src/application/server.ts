@@ -1,3 +1,4 @@
 import app from './app';
+import { application } from '../../config';
 
-app.listen(3000);
+app.listen(application.port);

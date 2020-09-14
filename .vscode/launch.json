@@ -9,6 +9,7 @@
     "name": "TS API",
     "program": "${workspaceFolder}/src/application/server.ts",
     "preLaunchTask": "tsc: build - tsconfig.json",
-    "outFiles": ["${workspaceFolder}/build/**/*.js"]
+    "outFiles": ["${workspaceFolder}/build/**/*.js"],
+    "envFile": "${workspaceRoot}/.env"
   }]
 }

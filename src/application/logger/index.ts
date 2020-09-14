@@ -4,8 +4,9 @@ const debug = Debug('TS-PROJECT:');
 
 const date = new Date();
 
-const error = (err: Error): void => {
+const error = (info: string, err: Error): void => {
   debug('ERROR', {
+    info,
     err,
     date,
   });
