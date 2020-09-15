@@ -1,6 +1,6 @@
-import UserRepository from '../../../../infrastructure/repositories/user/UserRepository';
-import MailTrapMailProvider from '../../../../infrastructure/providers/mailtrap/MailTrapMailProvider';
-import CreateUserUserCase from '../../../../business/User/use-cases/create/CreateUserUseCase';
+import CreateUserUserCase from '@business/User/use-cases/create/CreateUserUseCase';
+import UserRepository from '@infrastructure/repositories/user/UserRepository';
+import MailTrapMailProvider from '@infrastructure/providers/mailtrap/MailTrapMailProvider';
 import CreateUserController from '../../../controllers/user/create/CreateUserController';
 
 import { database } from '../../../../../config';

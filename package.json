@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules -r dotenv/config src/application/server.ts",
-    "dev": "DEBUG=TS-PROJECT:* ts-node-dev --respawn --transpile-only -r dotenv/config src/application/server.ts",
+    "start": "node -r dotenv/config build/src/application/server.js",
+    "dev": "DEBUG=TS-PROJECT:* ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify -r dotenv/config src/application/server.ts",
+    "build": "babel ./ --extensions \".js,.ts\" --out-dir build --copy-files --no-copy-ignored --source-maps",
     "test:unit": "cross-env NODE_ENV=test jest test/unit --coverage",
     "test:functional": " node -r dotenv/config node_modules/.bin/jest test/functional --coverage --detectOpenHandles --forceExit --runInBand",
     "lint:fix": "npx eslint . --ext .ts --fix",
@@ -40,6 +41,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "tsconfig-paths": "^3.9.0",
     "@types/express": "^4.17.8",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "eslint": "^7.9.0",

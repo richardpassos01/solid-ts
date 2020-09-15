@@ -1,7 +1,7 @@
+import { IMailProvider } from '@infrastructure/providers/IMailProvider';
 import { IUserRepository } from '../IUserRepository';
 import { ICreateUserRequestDTO } from './ICreateUserDTO';
 import User from '../../User';
-import { IMailProvider } from '../../../../infrastructure/providers/IMailProvider';
 
 export default class CreateUserUserCase {
   constructor(
