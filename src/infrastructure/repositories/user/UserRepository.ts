@@ -1,10 +1,10 @@
-import { IUserRepository } from '@business/User/use-cases/IUserRepository';
+import { Creatable, Fetchable, FetchableByEmail } from '@business/User/use-cases/UserRepository';
 import User from '@business/User/User';
-import IGenericDatabase from '../IGenericDatabase';
+import GenericDatabase from '../GenericDatabase';
 
-export default class UserRepository implements IUserRepository {
+export default class UserRepository implements Creatable, Fetchable, FetchableByEmail {
   constructor(
-    private queryBuilder: IGenericDatabase<User>,
+    private queryBuilder: GenericDatabase<User>,
     private tableName: string,
   ) {}
 

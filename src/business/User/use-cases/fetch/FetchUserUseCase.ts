@@ -1,13 +1,13 @@
-import { IUserRepository } from '../IUserRepository';
-import { IFetchUserDTORequestDTO } from './IFetchUserDTO';
+import { Fetchable } from '../UserRepository';
+import { FetchUserDTORequestDTO } from './FetchUserDTO';
 import User from '../../User';
 
 export default class FetchUserUserCase {
   constructor(
-    private userRepository: IUserRepository,
+    private readonly fetcher: Fetchable,
   ) { }
 
-  async execute(data: IFetchUserDTORequestDTO): Promise<User> {
-    return this.userRepository.fetch(data.id);
+  async execute(data: FetchUserDTORequestDTO): Promise<User> {
+    return this.fetcher.fetch(data.id);
   }
 }

@@ -1,16 +1,17 @@
-import { IMailProvider } from '@infrastructure/providers/IMailProvider';
-import { IUserRepository } from '../IUserRepository';
-import { ICreateUserRequestDTO } from './ICreateUserDTO';
+import { MailProvider } from '@business/shared/MailProvider';
+import { Creatable, FetchableByEmail } from '../UserRepository';
+import { CreateUserRequestDTO } from './CreateUserDTO';
 import User from '../../User';
 
 export default class CreateUserUserCase {
   constructor(
-    private userRepository: IUserRepository,
-    private mailProvider: IMailProvider,
+    private readonly fetcher: FetchableByEmail,
+    private readonly creator: Creatable,
+    private readonly mailProvider: MailProvider,
   ) { }
 
-  async execute(data: ICreateUserRequestDTO): Promise<void> {
-    const userAlreadyExists = await this.userRepository.fetchByEmail(data.email);
+  async execute(data: CreateUserRequestDTO): Promise<void> {
+    const userAlreadyExists = await this.fetcher.fetchByEmail(data.email);
 
     if (userAlreadyExists) {
       throw new Error('User already exists');
@@ -18,7 +19,7 @@ export default class CreateUserUserCase {
 
     const user = new User(data);
 
-    await this.userRepository.create(user);
+    await this.creator.create(user);
 
     await this.mailProvider.sendEmail({
       to: {

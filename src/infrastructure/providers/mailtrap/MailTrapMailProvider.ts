@@ -1,8 +1,8 @@
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
-import { IMailProvider, IMessage } from '../IMailProvider';
+import { MailProvider, Message } from '@business/shared/MailProvider';
 
-export default class MailTrapMailProvider implements IMailProvider {
+export default class MailTrapMailProvider implements MailProvider {
   private transporter: Mail;
 
   constructor() {
@@ -16,7 +16,7 @@ export default class MailTrapMailProvider implements IMailProvider {
     });
   }
 
-  async sendEmail(message: IMessage): Promise<void> {
+  async sendEmail(message: Message): Promise<void> {
     await this.transporter.sendMail({
       to: {
         name: message.to.name,

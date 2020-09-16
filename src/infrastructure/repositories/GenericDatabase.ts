@@ -1,4 +1,4 @@
-interface IGenericDatabase<Entity> {
+interface GenericDatabase<Entity> {
   (tableName: string);
   insert(args: Entity): Promise<Entity>;
   select(args?: string);
@@ -6,4 +6,4 @@ interface IGenericDatabase<Entity> {
   where(field: string, value: string);
 }
 
-export default IGenericDatabase;
+export default GenericDatabase;

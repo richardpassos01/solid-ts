@@ -1,16 +1,10 @@
 import FetchUserUserCase from '@business/User/use-cases/fetch/FetchUserUseCase';
-import UserRepository from '@infrastructure/repositories/user/UserRepository';
-import { database } from '@config';
 import FetchUserController from '@application/controllers/user/fetch/FetchUserController';
 
-import { connection } from '@database/relational';
-
-const queryBuilder = connection();
-
-const userRepository = new UserRepository(queryBuilder, database.relational.tables.partners);
+import { userFetcher } from '../repository';
 
 const fetchUserUseCase = new FetchUserUserCase(
-  userRepository,
+  userFetcher(),
 );
 
 const fetchUserController = new FetchUserController(
