@@ -1,6 +1,6 @@
 import Router from 'express';
-import { createUserController } from '../factories/user/create';
-import { fetchUserController } from '../factories/user/fetch';
+import { createUserController } from '@application/factories/user/create';
+import { fetchUserController } from '@application/factories/user/fetch';
 
 const router = Router();
 

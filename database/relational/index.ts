@@ -1,7 +1,6 @@
 import Knex from 'knex';
 import { database } from '@config';
-
-import logger from '../../src/application/logger';
+import logger from '@application/logger';
 
 export const config = {
   client: 'pg',

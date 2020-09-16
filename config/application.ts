@@ -1,6 +1,6 @@
 import env from 'env-var';
 
-import { name, version } from '../package.json';
+import { name, version } from '@root/package.json';
 
 const required = process.env.NODE_ENV !== 'test';
 
