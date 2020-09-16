@@ -16,6 +16,7 @@ module.exports = {
         '@application': './src/application',
         '@business': './src/business',
         '@infrastructure': './src/infrastructure',
+        '@database': './database',
         '@config': './config/index',
       },
     }],

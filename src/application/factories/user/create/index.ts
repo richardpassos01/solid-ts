@@ -2,9 +2,8 @@ import CreateUserUserCase from '@business/User/use-cases/create/CreateUserUseCas
 import UserRepository from '@infrastructure/repositories/user/UserRepository';
 import MailTrapMailProvider from '@infrastructure/providers/mailtrap/MailTrapMailProvider';
 import { database } from '@config';
-import CreateUserController from '../../../controllers/user/create/CreateUserController';
-
-import { connection } from '../../../../../database/relational';
+import { connection } from '@database/relational';
+import CreateUserController from '@application/controllers/user/create/CreateUserController';
 
 const queryBuilder = connection();
 
