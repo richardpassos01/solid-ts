@@ -1,8 +1,7 @@
 import FetchUserUserCase from '@business/User/use-cases/fetch/FetchUserUseCase';
 import UserRepository from '@infrastructure/repositories/user/UserRepository';
+import { database } from '@config';
 import FetchUserController from '../../../controllers/user/fetch/FetchUserController';
-
-import { database } from '../../../../../config';
 
 import { connection } from '../../../../../database/relational';
 

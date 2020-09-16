@@ -31,7 +31,8 @@
     "paths": {
       "@application/*": ["./src/application/*"],
       "@business/*": ["./src/business/*"],
-      "@infrastructure/*": ["./src/infrastructure/*"]
+      "@infrastructure/*": ["./src/infrastructure/*"],
+      "@config*": ["./config/index"]
     }
   },
   "include": [
