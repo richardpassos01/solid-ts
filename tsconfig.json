@@ -34,7 +34,7 @@
       "@business/*": ["./src/business/*"],
       "@infrastructure/*": ["./src/infrastructure/*"],
       "@database/*": ["./database/*"],
-      "@config*": ["./config/index"]
+      "@config": ["./config/index"]
     }
   },
   "include": [
